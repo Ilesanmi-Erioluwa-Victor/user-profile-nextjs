@@ -10,7 +10,8 @@ import {
   SparklesIcon,
   ChevronDownIcon,
   Cog8ToothIcon,
-  
+  ChatBubbleOvalLeftEllipsisIcon,
+  UserPlusIcon
 } from "@heroicons/react/24/outline";
 import { GrUserAdmin } from "react-icons/gr";
 import { BiTask } from "react-icons/bi";
@@ -34,12 +35,23 @@ interface DownMenu {
   link: string;
 }
 
-const DownMenu: DownMenu[] = [{
+const DownMenu: DownMenu[] = [
+  {
   name: "Support",
   id: uuidv4(),
   link: "/",
-  icon : 
-}]
+  icon : <Cog8ToothIcon />
+  }, 
+
+  {
+  name: "Settings",
+  id: uuidv4(),
+  link: "/",
+  icon : <ChatBubbleOvalLeftEllipsisIcon />
+  }, 
+  
+
+]
 
 const MenuItem: Menu[] = [
   {
@@ -54,7 +66,7 @@ const MenuItem: Menu[] = [
   {
     id: uuidv4(),
     name: "Dashboard",
-    icon: <GrUserAdmin />,
+    icon: <UserPlusIcon />,
     link: "/dashboard",
     isActive: false,
     dir: <ChevronDownIcon />,
@@ -124,20 +136,37 @@ const SideMenu = (): JSX.Element => {
         </Link>
 
         <Search placeholder="search" inputClass={`px-5`}/>
-
+         <nav>
         {MenuItem.map((link) => {
           return (
             <ul key={link.id}>
               <li>
-                <Link href={link.link}>{link.name}</Link>
+                <Link href={link.link}>
+                  <span>{link.name}</span> 
+                  <span>{ link.icon}</span>
+                </Link>
               </li>
             </ul>
           );
         })}
+          </nav>
       </div>
 
       <div>
-
+        <nav>
+           {DownMenu.map((link) => {
+          return (
+            <ul key={link.id}>
+              <li>
+                <Link href={link.link}>
+                  <span>{ link.name}</span>
+                  {link.icon}
+                </Link>
+              </li>
+            </ul>
+          );
+        })}
+        </nav>
       </div>
     </aside>
   );
