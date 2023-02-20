@@ -1,26 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
-import logo from "src/assets/icons/Link.svg";
+import logo from "src/assets/images/africanwomansmiling.png";
 import PropTypes, { InferProps } from "prop-types";
-import { HomeIcon, FolderIcon, ChartPieIcon, SparklesIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import {
+  HomeIcon,
+  FolderIcon,
+  ChartPieIcon,
+  SparklesIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
 import { GrUserAdmin } from "react-icons/gr";
 import { BiTask } from "react-icons/bi";
-
+import Search from "./Search";
 
 const Img = {
   image: PropTypes.string.isRequired,
 };
-
 
 interface Menu {
   name: string;
   id: string;
   icon: any;
   link: string;
-    isActive: boolean;
+  isActive: boolean;
   sublinks?: any;
-    dir: any;
+  dir: any;
 }
 
 const MenuItem: Menu[] = [
@@ -29,8 +34,8 @@ const MenuItem: Menu[] = [
     name: "Home",
     icon: <HomeIcon />,
     link: "/",
-        isActive: true,
-    dir : <ChevronDownIcon />
+    isActive: true,
+    dir: <ChevronDownIcon />,
   },
 
   {
@@ -38,8 +43,8 @@ const MenuItem: Menu[] = [
     name: "Dashboard",
     icon: <GrUserAdmin />,
     link: "/dashboard",
-      isActive: false,
-    dir : <ChevronDownIcon />
+    isActive: false,
+    dir: <ChevronDownIcon />,
   },
 
   {
@@ -47,8 +52,8 @@ const MenuItem: Menu[] = [
     name: "Projects",
     icon: <FolderIcon />,
     link: "/projects",
-      isActive: false,
-    dir : <ChevronDownIcon />
+    isActive: false,
+    dir: <ChevronDownIcon />,
   },
 
   {
@@ -56,45 +61,42 @@ const MenuItem: Menu[] = [
     name: "Tasks",
     icon: <ChartPieIcon />,
     link: "/tasks",
-      isActive: false,
-    dir : <ChevronDownIcon />
-    },
-  
-  
+    isActive: false,
+    dir: <ChevronDownIcon />,
+  },
+
   {
     id: uuidv4(),
     name: "Reporting",
     icon: <BiTask />,
     link: "/reports",
-      isActive: false,
-      dir : <ChevronDownIcon />
-    
+    isActive: false,
+    dir: <ChevronDownIcon />,
   },
 
-    {
+  {
     id: uuidv4(),
     name: "Designers",
     icon: <SparklesIcon />,
     link: "/designers",
-     isActive: false,
-        dir: <ChevronDownIcon />,
-       sublinks: [{
-         name: "All Designers",
-         id: uuidv4(),
-       },
-         
-         {
-         name: "Popular",
-         id: uuidv4(),
-         },
-         
-         {
-         name: "Recently Added",
-         id: uuidv4(),
-       },
-       
-       ]
-    
+    isActive: false,
+    dir: <ChevronDownIcon />,
+    sublinks: [
+      {
+        name: "All Designers",
+        id: uuidv4(),
+      },
+
+      {
+        name: "Popular",
+        id: uuidv4(),
+      },
+
+      {
+        name: "Recently Added",
+        id: uuidv4(),
+      },
+    ],
   },
 ];
 
@@ -102,24 +104,26 @@ const SideMenu = (): JSX.Element => {
   return (
     <aside>
       <div className="relative">
-        <link>
-        <figure>
-            <Image src= {logo} alt="logo" className=""/>
-        </figure>
-        </link>
-   
-        {MenuItem.map(link => {
+        <Link href={"/"}>
+          <figure>
+            <Image src={logo} alt="logo" className="" />
+          </figure>
+        </Link>
+
+        <Search placeholder="search" />
+
+        {MenuItem.map((link) => {
           return (
             <ul key={link.id}>
               <li>
                 <Link href={link.link}>{link.name}</Link>
               </li>
-             </ul>
-           )
-         })}
-       </div>
-      </aside>
-    )
-}
+            </ul>
+          );
+        })}
+      </div>
+    </aside>
+  );
+};
 
-export default SideMenu
+export default SideMenu;
