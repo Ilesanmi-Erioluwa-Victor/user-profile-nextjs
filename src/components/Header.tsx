@@ -5,9 +5,13 @@ import PropTypes, { InferProps } from "prop-types";
 import { HomeIcon, FolderIcon, ChartPieIcon, SparklesIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { GrUserAdmin } from "react-icons/gr";
 import { BiTask } from "react-icons/bi";
-const header = {
+const Img = {
   image: PropTypes.string.isRequired,
 };
+interface Sublink {
+  name: string;
+  id: string;
+}
 
 interface Menu {
   name: string;
@@ -15,9 +19,7 @@ interface Menu {
   icon: any;
   link: string;
     isActive: boolean;
-    sublinks?: {
-        name: string;
-    };
+  sublinks?: any;
     dir: any;
 }
 
@@ -76,9 +78,22 @@ const MenuItem: Menu[] = [
     link: "/designers",
      isActive: false,
         dir: <ChevronDownIcon />,
-        sublinks: [{
-        name : "All Designers"
-    }]
+       sublinks: [{
+         name: "All Designers",
+         id: uuidv4(),
+       },
+         
+         {
+         name: "Popular",
+         id: uuidv4(),
+         },
+         
+         {
+         name: "Recently Added",
+         id: uuidv4(),
+       },
+       
+       ]
     
   },
 ];
