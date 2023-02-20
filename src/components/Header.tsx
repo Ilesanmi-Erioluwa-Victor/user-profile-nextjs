@@ -2,7 +2,7 @@ import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 import linkImgae from "src/assets/icons/Link.svg";
 import PropTypes, { InferProps } from "prop-types";
-import { HomeIcon, FolderIcon, ChartPieIcon } from "@heroicons/react/24/outline";
+import { HomeIcon, FolderIcon, ChartPieIcon, SparklesIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { GrUserAdmin } from "react-icons/gr";
 import { BiTask } from "react-icons/bi";
 const header = {
@@ -14,7 +14,11 @@ interface Menu {
   id: string;
   icon: any;
   link: string;
-  isActive: boolean;
+    isActive: boolean;
+    sublinks?: {
+        name: string;
+    };
+    dir: any;
 }
 
 const MenuItem: Menu[] = [
@@ -23,7 +27,8 @@ const MenuItem: Menu[] = [
     name: "Home",
     icon: <HomeIcon />,
     link: "/",
-    isActive: true,
+        isActive: true,
+    dir : <ChevronDownIcon />
   },
 
   {
@@ -31,7 +36,8 @@ const MenuItem: Menu[] = [
     name: "Dashboard",
     icon: <GrUserAdmin />,
     link: "/dashboard",
-    isActive: false,
+      isActive: false,
+    dir : <ChevronDownIcon />
   },
 
   {
@@ -39,7 +45,8 @@ const MenuItem: Menu[] = [
     name: "Projects",
     icon: <FolderIcon />,
     link: "/projects",
-    isActive: false,
+      isActive: false,
+    dir : <ChevronDownIcon />
   },
 
   {
@@ -47,7 +54,8 @@ const MenuItem: Menu[] = [
     name: "Tasks",
     icon: <ChartPieIcon />,
     link: "/tasks",
-    isActive: false,
+      isActive: false,
+    dir : <ChevronDownIcon />
     },
   
   
@@ -56,6 +64,21 @@ const MenuItem: Menu[] = [
     name: "Reporting",
     icon: <BiTask />,
     link: "/reports",
-    isActive: false,
+      isActive: false,
+      dir : <ChevronDownIcon />
+    
+  },
+
+    {
+    id: uuidv4(),
+    name: "Designers",
+    icon: <SparklesIcon />,
+    link: "/designers",
+     isActive: false,
+        dir: <ChevronDownIcon />,
+        sublinks: [{
+        name : "All Designers"
+    }]
+    
   },
 ];
