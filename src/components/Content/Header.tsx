@@ -4,7 +4,7 @@ import back from "src/assets/images/africanwomansmiling.png";
 
 const Header = ():JSX.Element => {
   return (
-    <div>
+    <div className='w-8/12'>
           <figure>
                <Image src={back} alt='background' className=''/>
           </figure>

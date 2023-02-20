@@ -4,9 +4,12 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className='container_grid overall-layout'>
-        <Main />
+      <body className='container_grid'>
+        <section className='overall-layout'>
+          <Main />
         <NextScript />
+        </section>
+       
       </body>
     </Html>
   )

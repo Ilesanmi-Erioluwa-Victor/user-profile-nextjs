@@ -102,7 +102,7 @@ const MenuItem: Menu[] = [
 
 const SideMenu = (): JSX.Element => {
   return (
-    <aside>
+    <aside className="w-4/12">
       <div className="relative">
         <Link href={"/"}>
           <figure>
