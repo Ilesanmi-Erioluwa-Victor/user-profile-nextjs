@@ -101,7 +101,15 @@ const MenuItem: Menu[] = [
 const SideMenu = (): JSX.Element => {
   return (
     <aside>
-      
+      <div className="relative">
+        {MenuItem.map(link => {
+          return (
+            <ul key={link.id}>
+              
+             </ul>
+           )
+         })}
+       </div>
       </aside>
     )
 }
