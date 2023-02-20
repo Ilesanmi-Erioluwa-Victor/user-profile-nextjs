@@ -13,7 +13,7 @@ const User = () => {
               
               <div>
                   <h2>Mina Wikel</h2>
-                  <p>I`&apos;`m a Product Designer based in mediborne</p>
+                  <p>I&apos;m a Product Designer based in mediborne</p>
               </div>
           </div>
           
