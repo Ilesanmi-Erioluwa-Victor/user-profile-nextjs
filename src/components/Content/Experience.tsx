@@ -44,6 +44,9 @@ const Experience = (): JSX.Element => {
         <h2>Skills</h2>
         <div>
           <Button classes={inter.className}>UX Design</Button>
+          <Button classes={inter.className}>Product Design</Button>
+          <Button classes={inter.className}>Webflow</Button>
+           <Button classes={inter.className}>Figma</Button>
         </div>
       </div>
     </section>
