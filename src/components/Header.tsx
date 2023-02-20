@@ -29,8 +29,16 @@ const MenuItem: Menu[] = [
       {
     id: uuidv4(),
     name: "Dashboard",
-    icon: <HomeIcon />,
-    link: "/",
-    isActive: true,
+    icon: <GrUserAdmin />,
+    link: "/dashboard",
+    isActive: false,
+    },
+      
+           {
+    id: uuidv4(),
+    name: "Dashboard",
+    icon: <GrUserAdmin />,
+    link: "/dashboard",
+    isActive: false,
   },
 ];
