@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { Butterfly_Kids } from '@next/font/google';
 import Button from "../Button";
+import { ArrowDownIcon  } from "@heroicons/react/24/outline";
 
-const inter = Butterfly_Kids({ weight: "400", subsets:["latin-ext" ] })
+const inter = Butterfly_Kids({ weight: "400", subsets:["latin-ext"] })
 
 const Experience = (): JSX.Element => {
   
@@ -31,7 +32,9 @@ const Experience = (): JSX.Element => {
           </p>
           
           <div>
-            <Link href={"#"}>Read more</Link>
+            <Link href={"#"}>
+              <Button> Read more <ArrowDownIcon /> </Button>
+            </Link>
           </div>
         </div>
       </div>
