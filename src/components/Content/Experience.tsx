@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Butterfly_Kids } from '@next/font/google';
 import Button from "../Button";
-import { ArrowDownIcon  } from "@heroicons/react/24/outline";
+import { ArrowDownIcon, GlobeAsiaAustraliaIcon, ArrowUpRightIcon  } from "@heroicons/react/24/outline";
 
 const inter = Butterfly_Kids({ weight: "400", subsets:["latin-ext"] })
 
@@ -47,6 +47,21 @@ const Experience = (): JSX.Element => {
           <Button classes={inter.className}>Product Design</Button>
           <Button classes={inter.className}>Webflow</Button>
            <Button classes={inter.className}>Figma</Button>
+        </div>
+        <div>
+          <h2>Location</h2>
+          <p>
+            <GlobeAsiaAustraliaIcon />
+            <span>Melbourne, Australia</span>
+            </p>
+        </div>
+
+        <div>
+          <h2>Website</h2>
+          <Link href={"#"}>
+            <span>Minawinkel.com</span>
+            <span><ArrowUpRightIcon /></span>
+          </Link>
         </div>
       </div>
     </section>
