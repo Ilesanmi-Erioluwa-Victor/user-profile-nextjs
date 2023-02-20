@@ -12,5 +12,5 @@ interface Menu{
     Projects: string;
     Tasks: string;
     Reporting: string;
-    
+    Designers: string[];
 }
