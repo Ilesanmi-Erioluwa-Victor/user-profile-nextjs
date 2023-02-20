@@ -1,10 +1,15 @@
 import React from 'react'
+import logo from "src/assets/images/africanwomansmiling.png";
 
+interface user {
+    name: string;
+    desc: string;
+}
 const User = () => {
   return (
-    <div>
-      
-    </div>
+    <section>
+       <div></div>
+    </section>
   )
 }
 

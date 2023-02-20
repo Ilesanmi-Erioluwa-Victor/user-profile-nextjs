@@ -14,9 +14,6 @@ import { GrUserAdmin } from "react-icons/gr";
 import { BiTask } from "react-icons/bi";
 import Search from "./Search";
 
-const Img = {
-  image: PropTypes.string.isRequired,
-};
 
 interface Menu {
   name: string;
