@@ -8,5 +8,9 @@ const header = {
 
 interface Menu{
     Home: string;
+    Dashboard: string;
+    Projects: string;
+    Tasks: string;
+    Reporting: string;
     
 }
