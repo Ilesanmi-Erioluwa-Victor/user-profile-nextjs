@@ -9,7 +9,9 @@ const Header = (): JSX.Element => {
       <figure className="w-full bg-red-600">
         <Image src={back} alt="background" className="" />
       </figure>
-      <User />
+          <User />
+          
+          
     </div>
   );
 };
