@@ -1,19 +1,26 @@
 import Image from "next/image";
-import { v4 as uuidv4 } from 'uuid';
-import linkImgae from "src/assets/icons/Link.svg"
+import { v4 as uuidv4 } from "uuid";
+import linkImgae from "src/assets/icons/Link.svg";
 import PropTypes, { InferProps } from "prop-types";
-
+import { HomeIcon } from "@heroicons/react/24/outline";
 const header = {
-    image : PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
+
+interface Menu {
+  name: string;
+  id: string;
+  icon: any;
+  link: string;
+  isActive: boolean;
 }
 
-interface Menu{
-    name: string;
-}
-
-const MenuItem  =  [
-     { 
-     id : uuidv4(),
-    name: "Home",  
-    },
-]
+const MenuItem: Menu[] = [
+  {
+    id: uuidv4(),
+    name: "Home",
+    icon: <HomeIcon />,
+    link: "/",
+    isActive: true,
+  },
+];
