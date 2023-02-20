@@ -1,17 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
-import linkImgae from "src/assets/icons/Link.svg";
+import logo from "src/assets/icons/Link.svg";
 import PropTypes, { InferProps } from "prop-types";
 import { HomeIcon, FolderIcon, ChartPieIcon, SparklesIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { GrUserAdmin } from "react-icons/gr";
 import { BiTask } from "react-icons/bi";
+
+
 const Img = {
   image: PropTypes.string.isRequired,
 };
-interface Sublink {
-  name: string;
-  id: string;
-}
+
 
 interface Menu {
   name: string;
@@ -102,10 +102,18 @@ const SideMenu = (): JSX.Element => {
   return (
     <aside>
       <div className="relative">
+        <link>
+        <figure>
+            <Image src= {logo} alt="logo" className=""/>
+        </figure>
+        </link>
+   
         {MenuItem.map(link => {
           return (
             <ul key={link.id}>
-              <li>{link.name }</li>
+              <li>
+                <Link href={link.link}>{link.name}</Link>
+              </li>
              </ul>
            )
          })}
