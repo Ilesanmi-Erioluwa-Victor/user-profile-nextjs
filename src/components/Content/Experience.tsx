@@ -1,7 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import { Butterfly_Kids } from '@next/font/google';
+import Button from "../Button";
+
+const inter = Butterfly_Kids({ weight: "400", subsets:["latin-ext" ] })
 
 const Experience = (): JSX.Element => {
+  
   return (
     <section>
       <div>
@@ -34,6 +39,9 @@ const Experience = (): JSX.Element => {
       {/* Skills */}
       <div>
         <h2>Skills</h2>
+        <div>
+          <Button classes={inter.className}>UX Design</Button>
+        </div>
       </div>
     </section>
   );
