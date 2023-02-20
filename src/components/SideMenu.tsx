@@ -9,6 +9,8 @@ import {
   ChartPieIcon,
   SparklesIcon,
   ChevronDownIcon,
+  Cog8ToothIcon,
+  
 } from "@heroicons/react/24/outline";
 import { GrUserAdmin } from "react-icons/gr";
 import { BiTask } from "react-icons/bi";
@@ -24,6 +26,20 @@ interface Menu {
   sublinks?: any;
   dir: any;
 }
+
+interface DownMenu {
+  name: string;
+  id: string;
+  icon: any;
+  link: string;
+}
+
+const DownMenu: DownMenu[] = [{
+  name: "Support",
+  id: uuidv4(),
+  link: "/",
+  icon : 
+}]
 
 const MenuItem: Menu[] = [
   {
@@ -118,6 +134,10 @@ const SideMenu = (): JSX.Element => {
             </ul>
           );
         })}
+      </div>
+
+      <div>
+
       </div>
     </aside>
   );
