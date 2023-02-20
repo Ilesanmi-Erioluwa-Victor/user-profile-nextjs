@@ -110,7 +110,7 @@ const SideMenu = (): JSX.Element => {
           </figure>
         </Link>
 
-        <Search placeholder="search" />
+        <Search placeholder="search" inputClass={`px-5`}/>
 
         {MenuItem.map((link) => {
           return (

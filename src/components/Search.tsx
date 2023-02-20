@@ -5,17 +5,17 @@ import PropTypes, { InferProps } from "prop-types";
 const SearchProps = {
   placeholder: PropTypes.string.isRequired,
   inputClass: PropTypes.string,
-  // childClasses: PropTypes.string,
+  fieldClass: PropTypes.string,
 };
 export default function Search({
   placeholder,
   inputClass,
-  // childClasses,
+  fieldClass,
 }: InferProps<typeof SearchProps>): JSX.Element {
   return (
     <div className={`w-full`}>
       <fieldset
-        className={`w-full flex items-center border bg-white rounded-lg `}>
+        className={`w-full flex items-center border bg-white rounded-lg ${fieldClass}`}>
         <MagnifyingGlassIcon className="w-5 h-5" />
         <input
           type="text"
