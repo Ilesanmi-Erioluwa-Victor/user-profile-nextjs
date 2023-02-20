@@ -5,3 +5,8 @@ import PropTypes, { InferProps } from "prop-types";
 const header = {
     image : PropTypes.string.isRequired,
 }
+
+interface Menu{
+    Home: string;
+    
+}
