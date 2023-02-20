@@ -12,8 +12,8 @@ interface Menu{
 }
 
 const MenuItem  =  [
-    { 
+     { 
      id : uuidv4(),
     name: "Home",  
-    }
+    },
 ]
