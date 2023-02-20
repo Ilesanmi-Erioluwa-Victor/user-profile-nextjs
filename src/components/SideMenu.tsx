@@ -126,28 +126,28 @@ const MenuItem: Menu[] = [
 
 const SideMenu = (): JSX.Element => {
   return (
-    <aside className="w-4/12 p-6 relative h-screen">
-      <div className="relative">
-        <Link href={"/"}>
-          <figure>
+    <aside className="w-[20%] p-6 relative h-screen">
+      <div className="relative flex flex-col gap-5">
+        <Link href={"/"} className="flex items-center gap-8">
+          <figure className="w-8 h-8">
             <Image src={logo} alt="logo" className="" />
           </figure>
 
-          <span>Untitled UI</span>
+          <span className="text-2xl font-bold ">Untitled UI</span>
         </Link>
 
-        <Search placeholder="search" inputClass={`px-5`}/>
+        <Search placeholder="search" inputClass={`px-2`} fieldClass={"p-2"}/>
          <nav>
         {MenuItem.map((link) => {
           return (
-            <ul key={link.id}>
-              <li>
+            <ul key={link.id} className="flex">
+              <li className="flex">
                 <Link href={link.link}>
-                  <div>
-                    <span>{link.name}</span> 
+                  <div className="flex">
+                    <span className="">{link.name}</span> 
                     <span>{link.icon}</span>
                   </div>
-                  <span>{ link.dir}</span>
+                  <div className="block">{ link.dir}</div>
                 </Link>
               </li>
             </ul>
