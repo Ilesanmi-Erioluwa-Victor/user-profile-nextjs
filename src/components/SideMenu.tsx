@@ -11,10 +11,9 @@ import {
   ChevronDownIcon,
   Cog8ToothIcon,
   ChatBubbleOvalLeftEllipsisIcon,
-  UserPlusIcon
+  UserPlusIcon,
+  BriefcaseIcon
 } from "@heroicons/react/24/outline";
-import { GrUserAdmin } from "react-icons/gr";
-import { BiTask } from "react-icons/bi";
 import Search from "./Search";
 
 
@@ -84,7 +83,7 @@ const MenuItem: Menu[] = [
   {
     id: uuidv4(),
     name: "Tasks",
-    icon: <ChartPieIcon />,
+    icon: <BriefcaseIcon />,
     link: "/tasks",
     isActive: false,
     dir: <ChevronDownIcon />,
@@ -93,7 +92,7 @@ const MenuItem: Menu[] = [
   {
     id: uuidv4(),
     name: "Reporting",
-    icon: <BiTask />,
+    icon: <ChartPieIcon />,
     link: "/reports",
     isActive: false,
     dir: <ChevronDownIcon />,
@@ -142,8 +141,11 @@ const SideMenu = (): JSX.Element => {
             <ul key={link.id}>
               <li>
                 <Link href={link.link}>
-                  <span>{link.name}</span> 
-                  <span>{ link.icon}</span>
+                  <div>
+                    <span>{link.name}</span> 
+                    <span>{link.icon}</span>
+                  </div>
+                  <span>{ link.dir}</span>
                 </Link>
               </li>
             </ul>
