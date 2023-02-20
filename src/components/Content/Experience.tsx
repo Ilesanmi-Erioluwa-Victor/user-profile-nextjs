@@ -42,12 +42,14 @@ const Experience = (): JSX.Element => {
       {/* Skills */}
       <div>
         <h2>Skills</h2>
+
         <div>
           <Button classes={inter.className}>UX Design</Button>
           <Button classes={inter.className}>Product Design</Button>
           <Button classes={inter.className}>Webflow</Button>
            <Button classes={inter.className}>Figma</Button>
         </div>
+
         <div>
           <h2>Location</h2>
           <p>
@@ -62,6 +64,19 @@ const Experience = (): JSX.Element => {
             <span>Minawinkel.com</span>
             <span><ArrowUpRightIcon /></span>
           </Link>
+        </div>
+
+        <div>
+          <h2>Email</h2>
+             <Link href={"#"}>
+            <span>hello@Minawinkel.com</span>
+            <span><ArrowUpRightIcon /></span>
+          </Link>
+        </div>
+
+        <div>
+          <Button>Add to list</Button>
+          <Button>Message</Button>
         </div>
       </div>
     </section>
