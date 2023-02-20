@@ -126,12 +126,14 @@ const MenuItem: Menu[] = [
 
 const SideMenu = (): JSX.Element => {
   return (
-    <aside className="w-4/12">
+    <aside className="w-4/12 p-6 relative h-screen">
       <div className="relative">
         <Link href={"/"}>
           <figure>
             <Image src={logo} alt="logo" className="" />
           </figure>
+
+          <span>Untitled UI</span>
         </Link>
 
         <Search placeholder="search" inputClass={`px-5`}/>
