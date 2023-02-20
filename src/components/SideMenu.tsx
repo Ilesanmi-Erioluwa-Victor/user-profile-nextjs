@@ -97,3 +97,13 @@ const MenuItem: Menu[] = [
     
   },
 ];
+
+const SideMenu = (): JSX.Element => {
+  return (
+    <aside>
+      
+      </aside>
+    )
+}
+
+export default SideMenu
