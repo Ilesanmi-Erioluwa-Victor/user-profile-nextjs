@@ -105,7 +105,7 @@ const SideMenu = (): JSX.Element => {
         {MenuItem.map(link => {
           return (
             <ul key={link.id}>
-              
+              <li>{link.name }</li>
              </ul>
            )
          })}
