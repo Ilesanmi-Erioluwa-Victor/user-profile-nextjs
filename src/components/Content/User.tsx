@@ -5,7 +5,7 @@ import { CheckBadgeIcon } from "@heroicons/react/24/outline";
 
 const User = () => {
   return (
-    <section className="flex justify-between p-6 bg-green-900">
+    <section className="flex justify-between p-6">
       <div className="flex items-center relative ">
         <figure className="w-[8rem] h-[8rem] rounded-[50%] object-cover object-center p-2 absolute top-[-4rem]">
           <Image
@@ -18,7 +18,7 @@ const User = () => {
           <CheckBadgeIcon className="w-6 h-6" />
         </span>
 
-        <div className="relative">
+        <div className="relative pl-[10rem]">
           <h2>Mina Wikel</h2>
           <p>I&apos;m a Product Designer based in mediborne</p>
         </div>
