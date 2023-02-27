@@ -1,13 +1,13 @@
-import React from 'react'
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 import logo from "src/assets/images/africanwomansmiling.png";
-import { CheckBadgeIcon } from '@heroicons/react/24/outline';
+import { CheckBadgeIcon } from "@heroicons/react/24/outline";
 
 const User = () => {
   return (
-    <section className="flex justify-between p-4">
+    <section className="flex justify-between p-6">
       <div className="flex items-center relative ">
-        <figure className="w-20 h-20 rounded-[50%] object-cover object-center p-2">
+        <figure className="w-[8rem] h-[8rem] rounded-[50%] object-cover object-center p-2">
           <Image
             src={logo}
             alt={"user"}
@@ -31,6 +31,6 @@ const User = () => {
       </div>
     </section>
   );
-}
+};
 
-export default User
+export default User;
