@@ -19,7 +19,7 @@ const User = () => {
         </span>
 
         <div className="relative pl-[10rem]">
-          <h2>Mina Wikel</h2>
+          <h2 className="text-xl font-semibold">Mina Wikel <span className="inline-block h-2 w-2 ml-2 bg-green-500 rounded-[50%]"></span></h2> 
           <p>I&apos;m a Product Designer based in mediborne</p>
         </div>
       </div>
