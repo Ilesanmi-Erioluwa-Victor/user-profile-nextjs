@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import logo from "src/assets/images/africanwomansmiling.png";
-import { CheckBadgeIcon } from "@heroicons/react/24/outline";
+import { CheckBadgeIcon, PlusIcon } from "@heroicons/react/24/outline";
 
 const User = () => {
   return (
@@ -19,15 +19,20 @@ const User = () => {
         </span>
 
         <div className="relative pl-[10rem]">
-          <h2 className="text-xl font-semibold">Mina Wikel <span className="inline-block h-2 w-2 ml-2 bg-green-500 rounded-[50%]"></span></h2> 
+          <h2 className="text-xl font-bold">
+            Mina Wikel{" "}
+            <span className="inline-block h-2 w-2 ml-2 bg-green-500 rounded-[50%]"></span>
+          </h2>
           <p>I&apos;m a Product Designer based in mediborne</p>
         </div>
       </div>
 
-      <div>
+      <div className="flex items-center justify-between">
         <button>...</button>
         <button>Hire Me</button>
-        <button>Follow</button>
+        <button className="flex gap-1 items-center bg-black text-white px-4 py-1 rounded-md">
+          <PlusIcon className="w-3 h-3 text-white" /> Follow
+        </button>
       </div>
     </section>
   );
