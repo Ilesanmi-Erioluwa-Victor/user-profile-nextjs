@@ -9,7 +9,7 @@ const inter = Butterfly_Kids({ weight: "400", subsets:["latin-ext"] })
 const Experience = (): JSX.Element => {
   
   return (
-    <section>
+    <section className="relative">
       <div>
         <h2>Experience</h2>
         <p>
