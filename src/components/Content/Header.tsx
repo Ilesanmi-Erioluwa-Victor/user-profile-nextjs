@@ -3,15 +3,19 @@ import Image from "next/image";
 import back from "src/assets/images/africanwomansmiling.png";
 import User from "./User";
 import Experience from "./Experience";
-import { CheckBadgeIcon} from "@heroicons/react/24/outline";
+
 
 const Header = (): JSX.Element => {
   return (
-    <div className="w-8/12">
-      <figure className="w-full bg-red-600">
-        <Image src={back} alt="background" className="" />
-        <span> <CheckBadgeIcon /></span>
-      </figure>
+    <div className='w-[80%] bg-slate-100'>
+      {/* <figure className='w-full'>
+        <Image
+          src={back}
+          alt='background'
+          className='h-10'
+        />
+      </figure> */}
+      <div className="bg-red-700 h-[20rem] w-full"></div>
       <User />
       <Experience />
     </div>

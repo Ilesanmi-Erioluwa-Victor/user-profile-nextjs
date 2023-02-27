@@ -16,7 +16,7 @@ const Experience = (): JSX.Element => {
           I specialized in UX/UI design, brand strategy, and Web flow
           Development.
         </p>
-        <hr className="bg-orange-600 w-full h-1" />
+        <hr className='bg-orange-600 w-full h-1' />
         <div>
           <h2>About me</h2>
           <p>
@@ -30,15 +30,18 @@ const Experience = (): JSX.Element => {
             adipisicing elit. Nostrum, sequi hic sit ipsam doloribus totam
             pariatur accusamus unde illo eum.
           </p>
-          
+
           <div>
-            <Link href={"#"}>
-              <Button> Read more <ArrowDownIcon /> </Button>
+            <Link href={'#'}>
+              <Button>
+                {' '}
+                Read more <ArrowDownIcon className='w-4 h-4' />{' '}
+              </Button>
             </Link>
           </div>
         </div>
       </div>
- 
+
       {/* Skills */}
       <div>
         <h2>Skills</h2>
@@ -47,30 +50,34 @@ const Experience = (): JSX.Element => {
           <Button classes={inter.className}>UX Design</Button>
           <Button classes={inter.className}>Product Design</Button>
           <Button classes={inter.className}>Webflow</Button>
-           <Button classes={inter.className}>Figma</Button>
+          <Button classes={inter.className}>Figma</Button>
         </div>
 
         <div>
           <h2>Location</h2>
           <p>
-            <GlobeAsiaAustraliaIcon />
+            <GlobeAsiaAustraliaIcon className='w-4 h-4' />
             <span>Melbourne, Australia</span>
-            </p>
+          </p>
         </div>
 
         <div>
           <h2>Website</h2>
-          <Link href={"#"}>
+          <Link href={'#'}>
             <span>Minawinkel.com</span>
-            <span><ArrowUpRightIcon /></span>
+            <span>
+              <ArrowUpRightIcon className='w-4 h-4' />
+            </span>
           </Link>
         </div>
 
         <div>
           <h2>Email</h2>
-             <Link href={"#"}>
+          <Link href={'#'}>
             <span>hello@Minawinkel.com</span>
-            <span><ArrowUpRightIcon /></span>
+            <span>
+              <ArrowUpRightIcon className='w-4 h-4' />
+            </span>
           </Link>
         </div>
 
