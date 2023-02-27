@@ -195,10 +195,12 @@ const MenuItem: Menu[] = [
 ];
 
 const SideMenu = (): JSX.Element => {
+  const router = useRouter();
+
   const handleMenuClick = (item: Menu, index: number) => {
-    header.map((item) => (item.active = false));
-    if (router.pathname === item.link) {
-      header[index].active = true;
+    MenuItem.map((item) => (item.isActive = false));
+    if (router.pathname === item.sublinks.link) {
+      MenuItem[index].isActive = true;
     }
   };
 
@@ -233,8 +235,13 @@ const SideMenu = (): JSX.Element => {
                 className="flex"
               >
                 <li className="block w-full relative">
-                  <div className="flex justify-between items-center cursor-pointer hover:shadow-sm p-2 shadow-slate-50">
-                    <div className="flex items-center gap-2">
+                  <div className="flex justify-between items-center cursor-pointer p-2">
+                    <div
+                      className={`text-sm gap-2 flex capitalize cursor-pointer hover:text-primary_green  hover:underline-offset-4 ${
+                        link.isActive &&
+                        "text-green-600"
+                      }`}
+                    >
                       <span className="w-4 h-4">{link.icon}</span>
                       <span className="">{link.name}</span>
                     </div>

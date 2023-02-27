@@ -15,7 +15,7 @@ const Header = (): JSX.Element => {
           className='h-10'
         />
       </figure> */}
-      <div className="bg-red-700 h-[20rem] w-full"></div>
+      <div className="bg-red-700 h-[10rem] w-full"></div>
       <User />
       <Experience />
     </div>

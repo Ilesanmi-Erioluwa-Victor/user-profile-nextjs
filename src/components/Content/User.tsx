@@ -5,17 +5,17 @@ import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 
 const User = () => {
   return (
-    <section className='flex'>
-      <div className='flex items-center relative'>
-        <figure className='w-20 h-20 rounded-[50%] object-cover object-center p-2'>
+    <section className="flex justify-between p-4">
+      <div className="flex items-center relative ">
+        <figure className="w-20 h-20 rounded-[50%] object-cover object-center p-2">
           <Image
             src={logo}
-            alt={'user'}
+            alt={"user"}
           />
         </figure>
-        <span className='absolute text-blue-400 left-[5rem]'>
-          {' '}
-          <CheckBadgeIcon className='w-4 h-4 ' />
+        <span className="absolute text-blue-400 left-[5rem]">
+          {" "}
+          <CheckBadgeIcon className="w-4 h-4 " />
         </span>
 
         <div>
