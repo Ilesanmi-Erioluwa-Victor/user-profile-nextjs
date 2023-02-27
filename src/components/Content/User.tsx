@@ -27,9 +27,11 @@ const User = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-2">
         <button>...</button>
-        <button>Hire Me</button>
+        <button className="flex items-center bg-transparent text-black border px-4 py-1 rounded-md">
+          Hire Me
+        </button>
         <button className="flex gap-1 items-center bg-black text-white px-4 py-1 rounded-md">
           <PlusIcon className="w-3 h-3 text-white" /> Follow
         </button>
