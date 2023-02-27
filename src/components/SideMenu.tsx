@@ -1,8 +1,9 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { v4 as uuidv4 } from 'uuid';
-import logo from 'src/assets/images/africanwomansmiling.png';
-import PropTypes, { InferProps } from 'prop-types';
+import Image from "next/image";
+import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
+import { useRouter } from "next/router";
+import logo from "src/assets/images/africanwomansmiling.png";
+import PropTypes, { InferProps } from "prop-types";
 import {
   HomeIcon,
   FolderIcon,
@@ -13,8 +14,8 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
   UserPlusIcon,
   BriefcaseIcon,
-} from '@heroicons/react/24/outline';
-import Search from './Search';
+} from "@heroicons/react/24/outline";
+import Search from "./Search";
 
 interface Menu {
   name: string;
@@ -34,16 +35,16 @@ interface DownMenu {
 
 const DownMenu: DownMenu[] = [
   {
-    name: 'Support',
+    name: "Support",
     id: uuidv4(),
-    link: '/',
+    link: "/",
     icon: <Cog8ToothIcon />,
   },
 
   {
-    name: 'Settings',
+    name: "Settings",
     id: uuidv4(),
-    link: '/',
+    link: "/",
     icon: <ChatBubbleOvalLeftEllipsisIcon />,
   },
 ];
@@ -51,7 +52,7 @@ const DownMenu: DownMenu[] = [
 const MenuItem: Menu[] = [
   {
     id: uuidv4(),
-    name: 'Home',
+    name: "Home",
     icon: <HomeIcon />,
     isActive: true,
     dir: <ChevronDownIcon />,
@@ -59,188 +60,195 @@ const MenuItem: Menu[] = [
 
   {
     id: uuidv4(),
-    name: 'Dashboard',
+    name: "Dashboard",
     icon: <UserPlusIcon />,
     isActive: false,
     dir: <ChevronDownIcon />,
-     sublinks: [
+    sublinks: [
       {
-        name: 'All Designers',
+        name: "All Designers",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Popular',
+        name: "Popular",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Recently Added',
+        name: "Recently Added",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
     ],
   },
 
   {
     id: uuidv4(),
-    name: 'Projects',
+    name: "Projects",
     icon: <FolderIcon />,
     isActive: false,
     dir: <ChevronDownIcon />,
     sublinks: [
       {
-        name: 'All Designers',
+        name: "All Designers",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Popular',
+        name: "Popular",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Recently Added',
+        name: "Recently Added",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
     ],
   },
 
   {
     id: uuidv4(),
-    name: 'Tasks',
+    name: "Tasks",
     icon: <BriefcaseIcon />,
     isActive: false,
     dir: <ChevronDownIcon />,
     sublinks: [
       {
-        name: 'All Designers',
+        name: "All Designers",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Popular',
+        name: "Popular",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Recently Added',
+        name: "Recently Added",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
     ],
   },
 
   {
     id: uuidv4(),
-    name: 'Reporting',
+    name: "Reporting",
     icon: <ChartPieIcon />,
     isActive: false,
     dir: <ChevronDownIcon />,
     sublinks: [
       {
-        name: 'All Designers',
+        name: "All Designers",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Popular',
+        name: "Popular",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Recently Added',
+        name: "Recently Added",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
     ],
   },
 
   {
     id: uuidv4(),
-    name: 'Designers',
+    name: "Designers",
     icon: <SparklesIcon />,
     isActive: false,
     dir: <ChevronDownIcon />,
     sublinks: [
       {
-        name: 'All Designers',
+        name: "All Designers",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Popular',
+        name: "Popular",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
 
       {
-        name: 'Recently Added',
+        name: "Recently Added",
         id: uuidv4(),
-        link: '/designers',
+        link: "/designers",
       },
     ],
   },
 ];
 
 const SideMenu = (): JSX.Element => {
+  const handleMenuClick = (item: Menu, index: number) => {
+    header.map((item) => (item.active = false));
+    if (router.pathname === item.link) {
+      header[index].active = true;
+    }
+  };
+
   return (
-    <aside className='w-[20%] p-6 relative h-screen flex flex-col justify-between'>
-      <div className='relative flex flex-col gap-5'>
+    <aside className="w-[20%] p-6 relative h-screen flex flex-col justify-between">
+      <div className="relative flex flex-col gap-5">
         <Link
-          href={'/'}
-          className='flex items-center gap-8'
+          href={"/"}
+          className="flex items-center gap-8"
         >
-          <figure className='w-8 h-8'>
+          <figure className="w-8 h-8">
             <Image
               src={logo}
-              alt='logo'
-              className=''
+              alt="logo"
+              className=""
             />
           </figure>
 
-          <span className='text-2xl font-bold '>Untitled UI</span>
+          <span className="text-2xl font-bold ">Untitled UI</span>
         </Link>
 
         <Search
-          placeholder='search'
+          placeholder="search"
           inputClass={`px-2`}
-          fieldClass={'p-2'}
+          fieldClass={"p-2"}
         />
         <nav>
           {MenuItem.map((link) => {
             return (
               <ul
                 key={link.id}
-                className='flex'
+                className="flex"
               >
-                <li className='block w-full relative'>
-                  <div className='flex justify-between items-center cursor-pointer'>
-                    <div className='flex items-center gap-2'>
-                      <span className=''>{link.name}</span>
-                      <span className='w-4 h-4'>{link.icon}</span>
+                <li className="block w-full relative">
+                  <div className="flex justify-between items-center cursor-pointer hover:shadow-sm p-2 shadow-slate-50">
+                    <div className="flex items-center gap-2">
+                      <span className="w-4 h-4">{link.icon}</span>
+                      <span className="">{link.name}</span>
                     </div>
-                    <div className='w-4 h-4'>{link.dir}</div>
+                    <div className="w-4 h-4">{link.dir}</div>
                   </div>
                   {/* TODO Drowdown men to be solved later */}
 
-                  <ul className='hidden'>
-                      {link?.sublinks?.map((link: any, index: string) => (
-                        <li key={index}>
-                          <Link href={link?.link}> {link.name}</Link>
-                        </li>
-                      ))}
-                    </ul>
+                  <ul className="hidden">
+                    {link?.sublinks?.map((link: any, index: string) => (
+                      <li key={index}>
+                        <Link href={link?.link}> {link.name}</Link>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               </ul>
             );
@@ -254,9 +262,12 @@ const SideMenu = (): JSX.Element => {
             return (
               <ul key={link.id}>
                 <li>
-                  <Link href={link.link} className='flex items-center'>
+                  <Link
+                    href={link.link}
+                    className="flex items-center"
+                  >
                     <span>{link.name}</span>
-                    <span className='w-4 h-4'>{link.icon}</span>
+                    <span className="w-4 h-4">{link.icon}</span>
                   </Link>
                 </li>
               </ul>
